@@ -22,7 +22,7 @@ view: human {
   }
   dimension: full_name {
     type: string
-    sql: concat(${first_name}, " ", ${last_name} ;;
+    sql: concat(${first_name}, "+ ", ${last_name} ;;
   }
   measure: count {
     type: count
