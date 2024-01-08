@@ -20,6 +20,10 @@ view: human {
     type: string
     sql: ${TABLE}.last_name ;;
   }
+  dimension: full_name {
+    type: string
+    sql: concat(${first_name}, " ", ${last_name} ;;
+  }
   measure: count {
     type: count
     drill_fields: [id, last_name, first_name]
