@@ -2,7 +2,7 @@ connection: "thelook"
 
 # include all the views
 include: "/views/**/*.view.lkml"
-include: "/views/Jorge-ruiz.dashboard.lookml"
+include: "/Lookml_dashboards/Jorge-ruiz.dashboard.lookml"
 
 datagroup: crompton_123_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
