@@ -3,6 +3,7 @@ connection: "thelook"
 # include all the views
 include: "/views/**/*.view.lkml"
 include: "/Lookml_dashboards/Jorge-ruiz.dashboard.lookml"
+include: "/views/product_info.view.lkml"
 
 datagroup: crompton_123_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -30,7 +31,6 @@ explore: billion_orders {
 explore: dept {}
 
 
-
 explore: employees {}
 
 explore: events {
@@ -49,7 +49,7 @@ explore: fatal_error_user_derived_base {}
 
 explore: flights {}
 
-explore: human {}
+
 
 explore: hundred_million_orders {
   join: orders {
@@ -138,7 +138,13 @@ explore: persons {}
 
 explore: persons2 {}
 
-explore: products {}
+explore: products {
+  join: product_info {
+    type: left_outer
+    sql_on: { ${products.id} = ${product_info.id} ;;
+    relationship: many_to_one
+  }
+}
 
 explore: salary {
   join: dept {
