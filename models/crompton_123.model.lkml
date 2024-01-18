@@ -141,7 +141,7 @@ explore: persons2 {}
 explore: products {
   join: product_info {
     type: left_outer
-    sql_on: { ${products.id} = ${product_info.id} ;;
+    sql_on: ${products.id} = ${product_info.id} ;;
     relationship: many_to_one
   }
 }
