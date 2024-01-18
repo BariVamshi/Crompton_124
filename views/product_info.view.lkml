@@ -13,6 +13,7 @@
       }
     }
     dimension: id {
+      primary_key: yes
       description: ""
       type: number
     }
