@@ -10,6 +10,12 @@
         column: category {}
         column: count {}
         column: retail_price {}
+        column: item_name {
+          field: products.item_name
+        }
+        derived_column: average_retail_price {
+          sql: retail_price / count ;;
+        }
       }
     }
     dimension: id {
@@ -30,5 +36,12 @@
     dimension: retail_price {
       description: ""
       type: number
+    }
+    dimension: item_name {
+      type: string
+    }
+    dimension: average_retail_price {
+      type: number
+
     }
   }
