@@ -16,6 +16,7 @@
         derived_column: average_retail_price {
           sql: retail_price / count ;;
         }
+        timezone: "UTC"
       }
     }
     dimension: id {
