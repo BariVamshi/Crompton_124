@@ -13,6 +13,12 @@ datagroup: crompton_123_default_datagroup {
 persist_with: crompton_123_default_datagroup
 
 explore: billion_orders {
+  view_name: billion_orders
+    access_filter: {
+      field: orders.status
+      user_attribute: mandy
+      }
+
   join: orders {
     type: left_outer
     sql_on: ${billion_orders.order_id} = ${orders.id} ;;

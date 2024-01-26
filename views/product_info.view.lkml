@@ -5,6 +5,7 @@
   view: product_info {
     derived_table: {
       explore_source: products {
+        timezone: "UTC"
         column: id {}
         column: brand {}
         column: category {}
@@ -16,9 +17,10 @@
         derived_column: average_retail_price {
           sql: retail_price / count ;;
         }
-        timezone: "UTC"
+        filters: [products.brand: " jeans"]
       }
     }
+
     dimension: id {
       primary_key: yes
       description: ""
@@ -43,6 +45,5 @@
     }
     dimension: average_retail_price {
       type: number
-
-    }
+      }
   }
